@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation Inquiry Form</title>
+    <style>
+        :root {
+            /* --- CHANGE YOUR BRAND COLOR HERE --- */
+            --brand-color: #2563eb; 
+            /* ------------------------------------ */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            border-top: 5px solid var(--brand-color);
+        }
+
+        /* Header Styling for Logo and Title */
+        .header-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-section img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            /* Ensures the logo is centered and responsive */
+        }
+
+        h2 {
+            color: #1f2937;
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+            font-size: 14px;
+        }
+
+        .required::after {
+            content: " *";
+            color: #ef4444;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+            transition: all 0.2s;
+            background-color: #f9fafb;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--brand-color);
+            background-color: #fff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--brand-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: opacity 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        
+        <div class="header-section">
+            <img src="image_0.png" alt="MATTHEW'S Lettings & Services Ltd Logo">
+            <h2>Let's Get in Touch</h2>
+            <p class="subtitle">We promise not to spam you. We only send property updates that match your needs.</p>
+        </div>
+
+        <form action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="name" class="required">Customer Name</label>
+                <input type="text" id="name" name="customer_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile" class="required">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile_number" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="alt-mobile">Alternate Mobile Number</label>
+                <input type="tel" id="alt-mobile" name="alt_mobile_number">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="movein" class="required">Move-in Date</label>
+                <input type="date" id="movein" name="move_in_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="occupants" class="required">Number of Occupants</label>
+                <input type="number" id="occupants" name="occupants" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="type" class="required">Accommodation Type</label>
+                <select id="type" name="accommodation_type" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="individual">Individual</option>
+                    <option value="sharing">Sharing</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="beds" class="required">Number of Beds Required</label>
+                <input type="number" id="beds" name="number_beds" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="area" class="required">Preferred Area/Location</label>
+                <input type="text" id="area" name="area" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rent" class="required">Expected Rent</label>
+                <input type="number" id="rent" name="expected_rent" required>
+            </div>
+
+            <button type="submit">Submit Inquiry</button>
+            <p class="note">Fields marked with * are mandatory.</p>
+        </form>
+    </div>
+
+</body>
+</html>
